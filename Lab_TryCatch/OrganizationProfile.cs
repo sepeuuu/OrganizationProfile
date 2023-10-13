@@ -35,6 +35,7 @@ namespace Lab_TryCatch
                 "BS in Hospitality Management",
                 "BS in Tourism Management"
             };
+
             for (int i = 0; i < 6; i++)
             {
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
@@ -45,6 +46,7 @@ namespace Lab_TryCatch
                 "Male",
                 "Female"
             };
+
             for (int i = 0; i < 2; i++)
             {
                 cbGender.Items.Add(Gender[i].ToString());
@@ -53,17 +55,36 @@ namespace Lab_TryCatch
 
         public long StudentNumber(string studNum)
         {
-
-            _StudentNo = long.Parse(studNum);
+            try
+            {
+                _StudentNo = long.Parse(studNum);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid student number format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
 
             return _StudentNo;
         }
 
         public long ContactNo(string Contact)
         {
-            if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
+            try
             {
-                _ContactNo = long.Parse(Contact);
+                if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
+                {
+                    _ContactNo = long.Parse(Contact);
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid contact number format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
 
             return _ContactNo;
@@ -71,19 +92,45 @@ namespace Lab_TryCatch
 
         public string FullName(string LastName, string FirstName, string MiddleInitial)
         {
-            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
+            try
             {
-                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+                if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
+                {
+                    _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid name format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+    
 
             return _FullName;
         }
 
         public int Age(string age)
         {
-            if (Regex.IsMatch(age, @"^[0-9]{1,3}$"))
+            try
             {
-                _Age = Int32.Parse(age);
+                if (Regex.IsMatch(age, @"^[0-9]{1,3}$"))
+                {
+                    _Age = Int32.Parse(age);
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid age format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
 
             return _Age;
@@ -91,16 +138,37 @@ namespace Lab_TryCatch
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            StudentInformationClass.SetStudentNo = Convert.ToInt32(StudentNumber(txtStudentNo.Text));
-            StudentInformationClass.SetProgram = cbPrograms.Text;
-            StudentInformationClass.SetGender = cbGender.Text;
-            StudentInformationClass.SetContactNo = Convert.ToInt32(ContactNo(txtContactNo.Text));
-            StudentInformationClass.SetAge = Age(txtAge.Text);
-            StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
-
-            frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
+            try
+            {
+                StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+                StudentInformationClass.SetStudentNo = Convert.ToInt32(StudentNumber(txtStudentNo.Text));
+                StudentInformationClass.SetProgram = cbPrograms.Text;
+                StudentInformationClass.SetGender = cbGender.Text;
+                StudentInformationClass.SetContactNo = Convert.ToInt32(ContactNo(txtContactNo.Text));
+                StudentInformationClass.SetAge = Age(txtAge.Text);
+                StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid input format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Input cannot be null.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Input is too large or too small.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Index out of range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                frmConfirmation frm = new frmConfirmation();
+                frm.ShowDialog();
+            }       
         }
     }
 }
