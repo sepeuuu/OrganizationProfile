@@ -16,7 +16,7 @@ namespace Lab_TryCatch
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrganizationProfile());
+            Application.Run(new frmRegistration());
         }
     }
 }
