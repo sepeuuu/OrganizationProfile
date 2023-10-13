@@ -16,5 +16,10 @@ namespace Lab_TryCatch
         {
             InitializeComponent();
         }
+
+        private void frmConfirmation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -190,7 +190,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.Orange;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSubmit.Location = new System.Drawing.Point(149, 402);
+            this.btnSubmit.Location = new System.Drawing.Point(140, 404);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(120, 38);
             this.btnSubmit.TabIndex = 18;
@@ -223,6 +223,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmConfirmation";
             this.Text = "frmConfirmation";
+            this.Load += new System.EventHandler(this.frmConfirmation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

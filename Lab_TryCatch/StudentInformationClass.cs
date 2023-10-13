@@ -15,4 +15,5 @@ namespace Lab_TryCatch
         public string SetBirthday = " ";
         public string SetFullName = " ";
     }
+
 }

@@ -24,7 +24,7 @@ namespace Lab_TryCatch
 
         private void frmRegistration_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
