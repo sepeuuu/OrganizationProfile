@@ -118,70 +118,70 @@
             // lblStudentNo
             // 
             this.lblStudentNo.AutoSize = true;
-            this.lblStudentNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudentNo.Location = new System.Drawing.Point(172, 59);
             this.lblStudentNo.Name = "lblStudentNo";
-            this.lblStudentNo.Size = new System.Drawing.Size(88, 18);
+            this.lblStudentNo.Size = new System.Drawing.Size(89, 20);
             this.lblStudentNo.TabIndex = 11;
             this.lblStudentNo.Text = "2000270473";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(172, 104);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(123, 18);
+            this.lblName.Size = new System.Drawing.Size(119, 20);
             this.lblName.TabIndex = 12;
             this.lblName.Text = "Daluz, Sefrille, B";
             // 
             // lblProgram
             // 
             this.lblProgram.AutoSize = true;
-            this.lblProgram.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgram.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProgram.Location = new System.Drawing.Point(172, 149);
             this.lblProgram.Name = "lblProgram";
-            this.lblProgram.Size = new System.Drawing.Size(203, 18);
+            this.lblProgram.Size = new System.Drawing.Size(201, 20);
             this.lblProgram.TabIndex = 13;
             this.lblProgram.Text = "BS Information Technology";
             // 
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.Location = new System.Drawing.Point(172, 194);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(24, 18);
+            this.lblAge.Size = new System.Drawing.Size(25, 20);
             this.lblAge.TabIndex = 14;
             this.lblAge.Text = "20";
             // 
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthday.Location = new System.Drawing.Point(172, 239);
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(84, 18);
+            this.lblBirthday.Size = new System.Drawing.Size(83, 20);
             this.lblBirthday.TabIndex = 15;
             this.lblBirthday.Text = "2002-10-17";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(172, 284);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(63, 18);
+            this.lblGender.Size = new System.Drawing.Size(62, 20);
             this.lblGender.TabIndex = 16;
             this.lblGender.Text = "Female";
             // 
             // lblContactNo
             // 
             this.lblContactNo.AutoSize = true;
-            this.lblContactNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactNo.Location = new System.Drawing.Point(172, 329);
             this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(97, 18);
+            this.lblContactNo.Size = new System.Drawing.Size(98, 20);
             this.lblContactNo.TabIndex = 17;
             this.lblContactNo.Text = "+9195498540";
             // 

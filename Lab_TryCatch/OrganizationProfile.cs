@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+//using System.Text.RegularExpressions;
 
 namespace Lab_TryCatch
 {
@@ -38,6 +38,16 @@ namespace Lab_TryCatch
             for (int i = 0; i < 6; i++)
             {
                 cbPrograms.Items.Add(ListOfProgram[i].ToString());
+            }
+
+            string[] Gender = new string[]
+            {
+                "Male",
+                "Female"
+            };
+            for (int i = 0; i < 2; i++)
+            {
+                cbGender.Items.Add(Gender[i].ToString());
             }
         }
 
@@ -82,10 +92,10 @@ namespace Lab_TryCatch
         private void btnRegister_Click(object sender, EventArgs e)
         {
             StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            StudentInformationClass.SetStudentNo = StudentNumber(txtStudentNo.Text);
+            StudentInformationClass.SetStudentNo = Convert.ToInt32(StudentNumber(txtStudentNo.Text));
             StudentInformationClass.SetProgram = cbPrograms.Text;
             StudentInformationClass.SetGender = cbGender.Text;
-            StudentInformationClass.SetContactNo = ContactNo(txtContactNo.Text);
+            StudentInformationClass.SetContactNo = Convert.ToInt32(ContactNo(txtContactNo.Text));
             StudentInformationClass.SetAge = Age(txtAge.Text);
             StudentInformationClass.SetBirthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
 
