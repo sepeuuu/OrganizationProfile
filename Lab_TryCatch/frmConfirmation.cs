@@ -30,7 +30,8 @@ namespace Lab_TryCatch
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Submitted Successfully");
+            this.Close();
         }
     }
 }

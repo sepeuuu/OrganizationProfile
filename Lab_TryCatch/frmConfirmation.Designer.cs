@@ -190,9 +190,9 @@
             this.btnSubmit.BackColor = System.Drawing.Color.Orange;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSubmit.Location = new System.Drawing.Point(140, 404);
+            this.btnSubmit.Location = new System.Drawing.Point(240, 395);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(120, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(133, 39);
             this.btnSubmit.TabIndex = 18;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(422, 476);
+            this.ClientSize = new System.Drawing.Size(398, 461);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblContactNo);
             this.Controls.Add(this.lblGender);

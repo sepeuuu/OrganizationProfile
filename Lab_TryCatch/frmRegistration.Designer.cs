@@ -264,7 +264,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmRegistration";
-            this.Text = "OrganizationProfile";
+            this.Text = "frmRegistration";
             this.Load += new System.EventHandler(this.frmRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

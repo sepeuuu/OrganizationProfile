@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,61 +56,34 @@ namespace Lab_TryCatch
 
         public long StudentNumber(string studNum)
         {
-            try
-            {
-                _StudentNo = long.Parse(studNum);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Invalid student number format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
+            _StudentNo = long.Parse(studNum);
             return _StudentNo;
         }
 
         public long ContactNo(string Contact)
         {
-            try
+            if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
             {
-                if (Regex.IsMatch(Contact, @"^[0-9]{10,11}$"))
-                {
-                    _ContactNo = long.Parse(Contact);
-                }
-                else
-                {
-                    throw new FormatException();
-                }
+                _ContactNo = long.Parse(Contact);
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Invalid contact number format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                throw new IndexOutOfRangeException();
             }
-
+            
             return _ContactNo;
         }
 
         public string FullName(string LastName, string FirstName, string MiddleInitial)
         {
-            try
+            if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
-                {
-                    _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
-                }
-                else
-                {
-                    throw new FormatException();
-                }
-
+                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Invalid name format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                throw new ArgumentNullException();
             }
-    
 
             return _FullName;
         }
@@ -129,7 +103,7 @@ namespace Lab_TryCatch
             }
             catch (FormatException)
             {
-                MessageBox.Show("Invalid age format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid age format. Input is not a valid number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
 
@@ -150,19 +124,19 @@ namespace Lab_TryCatch
             }
             catch (FormatException)
             {
-                MessageBox.Show("Invalid input format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("Input cannot be null.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid input format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (OverflowException)
             {
-                MessageBox.Show("Input is too large or too small.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid student number format. Input is too large.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Full name cannot be null!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("Index out of range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid contact number format. Input doesn't have the required number of digits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
