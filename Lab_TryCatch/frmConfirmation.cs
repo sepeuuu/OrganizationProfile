@@ -33,5 +33,10 @@ namespace Lab_TryCatch
             MessageBox.Show("Submitted Successfully");
             this.Close();
         }
+
+        private void lblBirthday_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
